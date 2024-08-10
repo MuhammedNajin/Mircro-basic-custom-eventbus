@@ -26,22 +26,66 @@
 
 
 ![](./diff.png)
-<!-- 
+
 # JavaScript Primitive Data Types
 
 ## Overview
+ *Principles*, 
+## Principles
+ 
+`` Server indepdence ``
+- Each service runs in its own process
+- Services can be deployed independently
+- Different services can use different technologies
 
-In JavaScript, data types are classified into primitive and non-primitive types. This README focuses on *primitive data types*, which are the basic building blocks in JavaScript. Primitive data types represent single values and are immutable, meaning their values cannot be changed once created.
+ `` Decentralization ``
+- microservice promotes decentraliztion in terms of deployement and devlopment
+- Avoid single points of failure
+- Distribute decision-making and data management
+   
+ `` API and communication ``
+- common communcation methods include HTTP/REST gRPC and message queues
+- Well-defined APIs for inter-service communication
+- Clear contracts between services
+- Synchronous and asynchronous communication patterns
+- Message queues for decoupled, event-driven architectures (e.g., RabbitMQ, Apache Kafka)
 
-## Primitive Data Types
 
-### 1. String
-*Description*: Represents a sequence of characters used to store and manipulate text. 
-- *Examples*: 
-  - "Hello, world!"
-  - 'JavaScript'
-  - `` Template literal ``
+ `` Autonomus Teams ``
+- Small teams own and operate their services
+- Teams can make decisions independently
+   
+`` Scalability ``
+- Services can be scaled independently
+- Horizontal scaling of individual components
+- Better resource utilization
 
+`` Failure Isolation``
+- designed resilience to failures , since failure can happen distributed system
+- Failures in one service don't cascade to others
+- Implement circuit breakers and fallback mechanisms
+
+
+`` Database per-service ``
+- Each service should manages its own data store
+- Allows for choosing the best database for each use case
+- ensuring that services's data is isolated and not directly accessed by other services
+- it reduce data coupling 
+
+ `` inclusion DevOps  ``
+  - Automated deployment pipelines
+- Infrastructure as Code (IaC)
+- Continuous Integration and Continuous Deployment (CI/CD)
+
+``  monitoring  ``
+  - Centralized logging and monitoring
+- Real-time alerting systems
+- Performance metrics and tracing for each service
+ 
+``  documentation  ``
+  - Clear API documentation for each service
+- Architecture diagrams and decision records
+<!-- 
 ### 2. Number
 *Description*: Represents both integer and floating-point numbers. It includes standard numeric values.
 - *Examples*: 
