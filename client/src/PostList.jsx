@@ -6,7 +6,7 @@ const PostList = () => {
   const [posts, setPosts] = useState({});
 
   const fetchPosts = async () => {
-    const res = await axios.get("http://localhost:4000/posts");
+    const res = await axios.get("http://localhost:4002/posts");
     setPosts(res.data);
   };
   useEffect(() => {
@@ -16,7 +16,7 @@ const PostList = () => {
     return (
       <div key={post.id} style={{ width: "30%", marginBottom: "20px" }}>
         <h3>{post.title}</h3>
-        <CommentList postId={post.id} />
+        <CommentList comment={posts.comments} />
         <CommentCreate postId={post.id} />
       </div>
     );
